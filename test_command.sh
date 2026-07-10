@@ -1,0 +1,2 @@
+CUDA_VISIBLE_DEVICES="6" conda run -n lm_eval python -m lm_eval --model hf --model_args pretrained=allenai/OLMo-2-0425-1B --tasks bbq --limit 50 --include_path ../biasolate/custom_tasks/bbq_bfs > std.txt 2> err.txt
+CUDA_VISIBLE_DEVICES="6" conda run -n lm_eval python -m lm_eval --model hf --model_args pretrained=allenai/OLMo-2-0425-1B --tasks bbq_generate --limit 50 --include_path ../biasolate/custom_tasks/bbq_bfs > std_generate.txt 2> err_generate.txt

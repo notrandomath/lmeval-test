@@ -1,0 +1,52 @@
+2026-07-09:21:22:35 INFO     [__main__:348] Including path: ../biasolate/custom_tasks/bbq_bfs
+2026-07-09:21:23:35 WARNING  [__main__:369]  --limit SHOULD ONLY BE USED FOR TESTING.REAL METRICS SHOULD NOT BE COMPUTED USING LIMIT.
+2026-07-09:21:23:35 INFO     [__main__:450] Selected Tasks: ['bbq_generate']
+2026-07-09:21:23:35 INFO     [evaluator:202] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234 | Setting fewshot manual seed to 1234
+2026-07-09:21:23:35 INFO     [evaluator:240] Initializing hf model, with arguments: {'pretrained': 'allenai/OLMo-2-0425-1B'}
+2026-07-09:21:23:36 INFO     [models.huggingface:156] Using device 'cuda'
+2026-07-09:21:23:36 INFO     [models.huggingface:423] Model parallel was set to False, max memory was not set, and device map was set to {'': 'cuda'}
+`torch_dtype` is deprecated! Use `dtype` instead!
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.14s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.64it/s]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.45it/s]
+2026-07-09:21:23:38 WARNING  [api.task:132] bbq_generate: No `generation_kwargs` specified in task config, defaulting to {'until': ['\n\n'], 'do_sample': False, 'temperature': 0}
+2026-07-09:21:23:49 INFO     [evaluator:305] bbq_generate: Using gen_kwargs: {'until': ['\n\n'], 'do_sample': False, 'temperature': 0}
+2026-07-09:21:23:49 INFO     [api.task:434] Building contexts for bbq_generate on rank 0...
+
+  0%|          | 0/50 [00:00<?, ?it/s]
+100%|██████████| 50/50 [00:00<00:00, 2379.91it/s]
+2026-07-09:21:23:49 INFO     [evaluator:574] Running generate_until requests
+
+Running generate_until requests:   0%|          | 0/50 [00:00<?, ?it/s]
+Running generate_until requests:   2%|▏         | 1/50 [00:00<00:17,  2.76it/s]
+Running generate_until requests:   8%|▊         | 4/50 [00:00<00:04,  9.46it/s]
+Running generate_until requests:  12%|█▏        | 6/50 [00:00<00:03, 11.61it/s]
+Running generate_until requests:  16%|█▌        | 8/50 [00:00<00:03, 13.40it/s]
+Running generate_until requests:  20%|██        | 10/50 [00:00<00:02, 14.82it/s]
+Running generate_until requests:  24%|██▍       | 12/50 [00:00<00:02, 16.01it/s]
+Running generate_until requests:  28%|██▊       | 14/50 [00:01<00:02, 16.77it/s]
+Running generate_until requests:  32%|███▏      | 16/50 [00:01<00:01, 17.39it/s]
+Running generate_until requests:  36%|███▌      | 18/50 [00:01<00:01, 17.86it/s]
+Running generate_until requests:  40%|████      | 20/50 [00:01<00:01, 18.18it/s]
+Running generate_until requests:  44%|████▍     | 22/50 [00:01<00:01, 18.26it/s]
+Running generate_until requests:  48%|████▊     | 24/50 [00:01<00:01, 18.43it/s]
+Running generate_until requests:  52%|█████▏    | 26/50 [00:01<00:01, 18.56it/s]
+Running generate_until requests:  56%|█████▌    | 28/50 [00:01<00:01, 18.72it/s]
+Running generate_until requests:  60%|██████    | 30/50 [00:02<00:02,  7.36it/s]
+Running generate_until requests:  64%|██████▍   | 32/50 [00:03<00:04,  3.62it/s]
+Running generate_until requests:  68%|██████▊   | 34/50 [00:04<00:05,  2.67it/s]
+Running generate_until requests:  72%|███████▏  | 36/50 [00:04<00:03,  3.60it/s]
+Running generate_until requests:  76%|███████▌  | 38/50 [00:05<00:02,  4.76it/s]
+Running generate_until requests:  80%|████████  | 40/50 [00:05<00:01,  6.14it/s]
+Running generate_until requests:  84%|████████▍ | 42/50 [00:05<00:01,  7.71it/s]
+Running generate_until requests:  88%|████████▊ | 44/50 [00:05<00:01,  5.22it/s]
+Running generate_until requests:  92%|█████████▏| 46/50 [00:06<00:00,  4.26it/s]
+Running generate_until requests:  94%|█████████▍| 47/50 [00:06<00:00,  4.01it/s]
+Running generate_until requests:  96%|█████████▌| 48/50 [00:07<00:00,  3.75it/s]
+Running generate_until requests:  98%|█████████▊| 49/50 [00:07<00:00,  3.55it/s]
+Running generate_until requests: 100%|██████████| 50/50 [00:07<00:00,  3.41it/s]
+Running generate_until requests: 100%|██████████| 50/50 [00:07<00:00,  6.30it/s]
+2026-07-09:21:24:02 INFO     [loggers.evaluation_tracker:280] Output path not provided, skipping saving results aggregated
+

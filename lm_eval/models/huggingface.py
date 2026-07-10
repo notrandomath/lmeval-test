@@ -1018,7 +1018,6 @@ class HFLM(TemplateLM):
                     dim=-1,
                     dtype=self.softmax_dtype,
                 )
-
             return batch_size
 
         try:
@@ -1140,6 +1139,7 @@ class HFLM(TemplateLM):
                 enabled=self.mixed_precision_dtype is not None,
             ),
         ):
+            print(self.tokenizer.decode(inps[0]))
             if attn_mask is not None or labels is not None:
                 assert attn_mask is not None and labels is not None
                 assert transformers.AutoModelForSeq2SeqLM == self.AUTO_MODEL_CLASS
@@ -1182,6 +1182,8 @@ class HFLM(TemplateLM):
             dtype=self.mixed_precision_dtype,
             enabled=self.mixed_precision_dtype is not None,
         ):
+            for inner_item in context:
+                print(self.tokenizer.decode(inner_item))
             return self.model.generate(
                 input_ids=context,
                 max_length=max_length,
@@ -1503,6 +1505,7 @@ class HFLM(TemplateLM):
                     "labels": batched_conts,
                 }
 
+            print('input')
             multi_logits = F.log_softmax(
                 self._model_call(batched_inps, **call_kwargs),
                 dim=-1,
@@ -1557,6 +1560,12 @@ class HFLM(TemplateLM):
                     )  # [1, seq]
 
                     # Answer: (log prob, is-exact-match)
+                    print('output_tokens')
+                    for inner_item in cont_toks:
+                        print(self.tokenizer.decode(inner_item))
+                    print('output_logits')
+                    print(logits)
+                    print()
                     answer = (float(logits.sum()), bool(max_equal))
 
                     res.append(answer)
@@ -1668,7 +1677,9 @@ class HFLM(TemplateLM):
                 )
             max_length = kwargs.pop("max_length", context_enc.shape[1] + max_gen_toks)  # type: ignore
 
+
             # perform batched generation
+            print('input')
             cont = self._model_generate(
                 context=context_enc,
                 attention_mask=attn_masks,
@@ -1694,6 +1705,9 @@ class HFLM(TemplateLM):
                         cont_toks = cont_toks[think_token_indices[-1] + 1 :]
 
                 s = self.tok_decode(cont_toks)
+                print('output')
+                print(s)
+                print()
 
                 # Strip leading whitespace if we removed thinking tokens
                 if isinstance(self.think_end_token, int):

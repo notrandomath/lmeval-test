@@ -1,0 +1,42 @@
+2026-07-09:21:21:06 INFO     [__main__:348] Including path: ../biasolate/custom_tasks/bbq_bfs
+2026-07-09:21:22:05 WARNING  [__main__:369]  --limit SHOULD ONLY BE USED FOR TESTING.REAL METRICS SHOULD NOT BE COMPUTED USING LIMIT.
+2026-07-09:21:22:05 INFO     [__main__:450] Selected Tasks: ['bbq']
+2026-07-09:21:22:05 INFO     [evaluator:202] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234 | Setting fewshot manual seed to 1234
+2026-07-09:21:22:05 INFO     [evaluator:240] Initializing hf model, with arguments: {'pretrained': 'allenai/OLMo-2-0425-1B'}
+2026-07-09:21:22:05 INFO     [models.huggingface:156] Using device 'cuda'
+2026-07-09:21:22:06 INFO     [models.huggingface:423] Model parallel was set to False, max memory was not set, and device map was set to {'': 'cuda'}
+`torch_dtype` is deprecated! Use `dtype` instead!
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.19it/s]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  2.24it/s]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.98it/s]
+2026-07-09:21:22:18 INFO     [api.task:434] Building contexts for bbq on rank 0...
+
+  0%|          | 0/50 [00:00<?, ?it/s]
+100%|██████████| 50/50 [00:00<00:00, 2526.29it/s]
+2026-07-09:21:22:19 INFO     [evaluator:574] Running loglikelihood requests
+
+Running loglikelihood requests:   0%|          | 0/150 [00:00<?, ?it/s]
+Running loglikelihood requests:   1%|          | 1/150 [00:00<00:50,  2.94it/s]
+Running loglikelihood requests:   5%|▌         | 8/150 [00:00<00:06, 22.60it/s]
+Running loglikelihood requests:   9%|▊         | 13/150 [00:00<00:04, 30.13it/s]
+Running loglikelihood requests:  13%|█▎        | 19/150 [00:00<00:03, 37.70it/s]
+Running loglikelihood requests:  17%|█▋        | 26/150 [00:00<00:02, 46.88it/s]
+Running loglikelihood requests:  21%|██▏       | 32/150 [00:00<00:02, 47.54it/s]
+Running loglikelihood requests:  27%|██▋       | 41/150 [00:00<00:01, 59.31it/s]
+Running loglikelihood requests:  33%|███▎      | 50/150 [00:01<00:01, 67.94it/s]
+Running loglikelihood requests:  39%|███▉      | 59/150 [00:01<00:01, 70.40it/s]
+Running loglikelihood requests:  45%|████▍     | 67/150 [00:01<00:01, 66.10it/s]
+Running loglikelihood requests:  51%|█████     | 76/150 [00:01<00:01, 72.37it/s]
+Running loglikelihood requests:  57%|█████▋    | 85/150 [00:01<00:00, 77.13it/s]
+Running loglikelihood requests:  62%|██████▏   | 93/150 [00:01<00:00, 74.07it/s]
+Running loglikelihood requests:  68%|██████▊   | 102/150 [00:01<00:00, 74.53it/s]
+Running loglikelihood requests:  73%|███████▎  | 110/150 [00:01<00:00, 72.41it/s]
+Running loglikelihood requests:  79%|███████▉  | 119/150 [00:01<00:00, 77.10it/s]
+Running loglikelihood requests:  85%|████████▍ | 127/150 [00:02<00:00, 74.15it/s]
+Running loglikelihood requests:  90%|█████████ | 135/150 [00:02<00:00, 72.11it/s]
+Running loglikelihood requests:  97%|█████████▋| 145/150 [00:02<00:00, 79.56it/s]
+Running loglikelihood requests: 100%|██████████| 150/150 [00:02<00:00, 62.17it/s]
+2026-07-09:21:22:26 INFO     [loggers.evaluation_tracker:280] Output path not provided, skipping saving results aggregated
+
